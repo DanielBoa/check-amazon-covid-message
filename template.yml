@@ -1,0 +1,45 @@
+AWSTemplateFormatVersion : '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Parameters:
+  CovidMessageParamName:
+    Type: String
+    Default: amazon-covid-message
+  UrlToCheck:
+    Type: String
+    Default: https://www.amazon.co.uk/b?node=21103026031
+  PhoneNumber:
+    Type: String
+Resources:
+  CheckAmazonCovidMessage:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs12.x
+      Timeout: 10
+      Environment:
+        Variables:
+          COVID_MESSAGE_PARAM_NAME:
+            Ref: CovidMessageParamName
+          URL_TO_CHECK:
+            Ref: UrlToCheck
+          PHONE_NUMBER:
+            Ref: PhoneNumber
+      Policies:
+      - Statement:
+        - Sid: SSMGetPutParameter
+          Effect: Allow
+          Action:
+          - ssm:GetParameter
+          - ssm:PutParameter
+          Resource: '*'
+        - Sid: SNSSendSMS
+          Effect: Allow
+          Action:
+          - sns:Publish
+          - sns:SetSMSAttributes
+          Resource: '*'
+      Events:
+        Timer:
+          Type: Schedule
+          Properties:
+            Schedule: rate(5 minutes)
