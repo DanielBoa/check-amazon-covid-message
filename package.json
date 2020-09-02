@@ -1,20 +1,23 @@
 {
-  "name": "watch-for-tests",
+  "name": "check-amazon-covid-message",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "jest",
     "build": "sam build",
     "deploy": "npm run build && sam deploy --guided --capabilities CAPABILITY_IAM"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.4.2"
+  },
   "dependencies": {
     "aws-sdk": "^2.654.0",
     "cheerio": "^1.0.0-rc.3",
     "dotenv": "^8.2.0",
-    "node-fetch": "^2.6.0",
-    "nodemon": "^2.0.2"
+    "node-fetch": "^2.6.0"
   }
 }

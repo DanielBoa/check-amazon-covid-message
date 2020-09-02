@@ -13,7 +13,7 @@ Resources:
   CheckAmazonCovidMessage:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: index.handler
+      Handler: ./src/handler.handler
       Runtime: nodejs12.x
       Timeout: 10
       Environment:
