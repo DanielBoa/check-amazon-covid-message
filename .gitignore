@@ -1,3 +1,5 @@
 samconfig.toml
 .aws-sam
 node_modules
+env.json
+local.log

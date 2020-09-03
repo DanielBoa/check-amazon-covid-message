@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --rootDir src",
     "build": "sam build",
+    "local": "npm run build && sam local invoke --env-vars env.json --log-file local.log",
     "deploy": "npm run build && sam deploy --guided --capabilities CAPABILITY_IAM"
   },
   "keywords": [],

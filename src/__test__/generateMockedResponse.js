@@ -8,7 +8,7 @@ module.exports = (content, hasCorrectId = true) => ({
       <title>mock page</title>
     </head>
     <body>
-      <div id="${hasCorrectId ? 'eventColor' : ''}">${content}</div>
+      <div id="${hasCorrectId ? 'contentGrid_1231243' : ''}">${content}</div>
     </body>
     </html>
   `,

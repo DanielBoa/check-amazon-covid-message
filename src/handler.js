@@ -6,7 +6,7 @@ const ErrorEmptyMessage = require('./ErrorEmptyMessage');
 const savedMessage = require('./savedMessage');
 const sendUpdate = require('./sendUpdate');
 
-const extractMessageFromDocument = $ => $('#eventColor')
+const extractMessageFromDocument = $ => $('[id^="contentGrid_"]')
   .text()
   .trim()
   .replace(/[\n\s]{2,}/gm, '\n\n')
