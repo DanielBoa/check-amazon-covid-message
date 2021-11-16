@@ -16,7 +16,7 @@
     "jest": "^26.4.2"
   },
   "dependencies": {
-    "aws-sdk": "^2.654.0",
+    "aws-sdk": "^2.814.0",
     "cheerio": "^1.0.0-rc.3",
     "node-fetch": "^2.6.1"
   }
